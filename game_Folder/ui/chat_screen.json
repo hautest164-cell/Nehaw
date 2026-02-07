@@ -1,6 +1,13 @@
 {
   "namespace": "chat",
 
+  "chat_common": {
+    "chat_panel": {
+      "type": "panel",
+      "size": [ "100%", "100%" ]
+    }
+  },
+
   "chat_screen@common.base_screen": {
     "$screen_content": "chat.chat_screen_content"
   },
@@ -16,7 +23,7 @@
             { "border": { "type": "image", "texture": "textures/ui/focus_border_white", "color": [ 0.4, 0.6, 1.0, 0.3 ], "size": [ "100%", "100%" ], "layer": 10 } },
             { "bg": { "type": "image", "texture": "textures/ui/white", "color": [ 0, 0, 0, 0.4 ], "size": [ "100%", "100%" ], "layer": 1 } },
             // Uses standard panel to avoid the "control reference not found" error
-            { "chat_panel@chat_common.chat_panel": { "layer": 5 } }
+            { "chat_panel@chat.chat_common.chat_panel": { "layer": 5 } }
           ]
         }
       }

@@ -1,8 +1,15 @@
 {
   "namespace": "create_world",
 
+  "create_world_common": {
+    "create_world_panel": {
+      "type": "panel",
+      "size": [ "100%", "100%" ]
+    }
+  },
+
   "create_world_screen@common.base_screen": {
     "$screen_bg_content": "RPC_BGDATA.UI2",
-    "$screen_content": "create_world_common.create_world_panel"
+    "$screen_content": "create_world.create_world_common.create_world_panel"
   }
 }

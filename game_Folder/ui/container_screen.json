@@ -1,6 +1,20 @@
 {
   "namespace": "container",
 
+  "inventory_common": {
+    "inventory_panel": {
+      "type": "panel",
+      "size": [ "100%", "100%" ]
+    }
+  },
+
+  "chest_common": {
+    "chest_panel": {
+      "type": "panel",
+      "size": [ "100%", "100%" ]
+    }
+  },
+
   "client_container_bg": {
     "type": "panel",
     "size": [ "100%", "100%" ],
@@ -28,11 +42,11 @@
 
   "inventory_screen@common.base_screen": {
     "$screen_bg_content": "container.client_container_bg",
-    "$screen_content": "inventory_common.inventory_panel"
+    "$screen_content": "container.inventory_common.inventory_panel"
   },
 
   "chest_screen@common.base_screen": {
     "$screen_bg_content": "container.client_container_bg",
-    "$screen_content": "chest_common.chest_panel"
+    "$screen_content": "container.chest_common.chest_panel"
   }
 }

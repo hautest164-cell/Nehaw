@@ -2,6 +2,13 @@
   "ui_defs": [
    "ui/MENU/comps/RPC_BGCOMP.uicomponent",
    "ui/MENU/data/RPC_BGDATA.uidata",
-   "ui/start_screen.json"
+   "ui/common_buttons.json",
+   "ui/start_screen.json",
+   "ui/play_screen.json",
+   "ui/pause_screen.json",
+   "ui/settings_screen.json",
+   "ui/chat_screen.json",
+   "ui/container_screen.json",
+   "ui/create_world_screen.json"
   ]
 }
