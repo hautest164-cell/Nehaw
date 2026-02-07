@@ -41,6 +41,18 @@
         }
       },
       {
+        "icon_image": {
+          "type": "image",
+          "texture": "$button_icon",
+          "size": [ 12, 12 ],
+          "anchor_from": "center_left",
+          "anchor_to": "center_left",
+          "offset": [ 8, 0 ],
+          "layer": 2,
+          "$visible": "$button_icon != ''"
+        }
+      },
+      {
         "text_label": {
           "type": "label",
           "text": "$button_text",
@@ -49,7 +61,7 @@
           "color": [ 1, 1, 1, 1 ],
           "anchor_from": "center",
           "anchor_to": "center",
-          "offset": [ 0, 0 ],
+          "offset": [ 8, 0 ],
           "layer": 2
         }
       }
