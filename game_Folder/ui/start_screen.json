@@ -53,7 +53,7 @@
                 "type": "panel",
                 "size": [ "100%", 32 ],
                 "controls": [
-                  { "dr@common_buttons.light_text_button": { "$button_text": "Dressing Room", "$pressed_button_name": "button.menu_skins" } }
+                  { "dr@common_buttons.light_text_button": { "$button_text": "Dressing Room", "$pressed_button_name": "button.menu_skins", "$button_icon": "textures/gui/client/wolf_armor_icon" } }
                 ]
               }
             }
