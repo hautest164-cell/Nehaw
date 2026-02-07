@@ -1,8 +1,23 @@
 ﻿{
   "namespace": "start",
 
+  "start_empty_overlay": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {
+        "bg": {
+          "type": "image",
+          "texture": "textures/ui/empty",
+          "size": [ "100%", "100%" ],
+          "layer": 0
+        }
+      }
+    ]
+  },
+
   "start_screen@common.base_screen": {
-    "$screen_bg_content": "textures/ui/empty",
+    "$screen_bg_content": "start.start_empty_overlay",
     "$screen_content": "start.start_screen_content"
   },
 
@@ -34,7 +49,7 @@
                 "bindings": [ { "binding_name": "#gamertag_label" } ]
               }
             },
-            { "p": { "type": "panel", "size": [ 0, 4 ] } },
+            { "p": { "type": "panel", "size": [ 0, 10 ] } },
             {
               "dr_box": {
                 "type": "panel",

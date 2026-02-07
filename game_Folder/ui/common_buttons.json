@@ -23,6 +23,15 @@
         }
       },
       {
+        "pressed_state": {
+          "type": "image",
+          "texture": "textures/gui/client/btn_pressed",
+          "nineslice_size": 4.0,
+          "size": [ "100%", "100%" ],
+          "$visible": "$button_state == 'pressed'"
+        }
+      },
+      {
         "border": {
           "type": "image",
           "texture": "textures/gui/client/btn_border",

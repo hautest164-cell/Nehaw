@@ -75,9 +75,8 @@
 
   "btn_label": {
     "type": "label",
-    "text": "$btn_txt",
+    "text": "#${btn_txt}",
     "color": [ 1, 1, 1 ],
-    "shadow": true,
-    "layer": 5
+    "shadow": true
   }
 }
