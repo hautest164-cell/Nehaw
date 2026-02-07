@@ -1,8 +1,8 @@
 { 
   "ui_defs": [
+   "ui/common_buttons.json",
    "ui/MENU/comps/RPC_BGCOMP.uicomponent",
    "ui/MENU/data/RPC_BGDATA.uidata",
-   "ui/common_buttons.json",
    "ui/start_screen.json",
    "ui/play_screen.json",
    "ui/pause_screen.json",

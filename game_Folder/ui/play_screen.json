@@ -1,23 +1,29 @@
 {
   "namespace": "play",
 
-  "play_common": {
-    "play_screen_panel": {
-      "type": "panel",
-      "size": [ "100%", "100%" ]
-    }
+  "play_transparent_overlay": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {
+        "tint": {
+          "type": "image",
+          "texture": "textures/ui/white",
+          "color": [ 0, 0, 0, 0.3 ],
+          "size": [ "100%", "100%" ],
+          "layer": 1
+        }
+      }
+    ]
   },
 
   "play_screen@common.base_screen": {
-    // This line replaces the panorama with your custom background
-    "$screen_bg_content": "RPC_BGDATA.UI2", 
+    "$screen_bg_content": "play.play_transparent_overlay", 
     "$screen_content": "play.play_screen_content"
   },
 
   "play_screen_content": {
     "type": "panel",
-    "controls": [
-      { "main_control@play.play_common.play_screen_panel": {} }
-    ]
+    "size": [ "100%", "100%" ]
   }
 }

@@ -96,7 +96,9 @@
           "text": "$btn_txt",
           "color": [ 1, 1, 1 ],
           "shadow": true,
-          "layer": 5
+          "layer": 5,
+          "anchor_from": "center",
+          "anchor_to": "center"
         }
       }
     ]

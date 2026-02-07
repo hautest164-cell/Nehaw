@@ -23,11 +23,14 @@
           "controls": [
             {
               "name_tag": {
-                "type": "panel",
+                "type": "label",
                 "size": [ "100%", 22 ],
-                "controls": [
-                  { "bg@common_buttons.client_button_panel": { "$button_text": "#gamertag_label" } }
-                ],
+                "text": "#gamertag_label",
+                "color": [ 1, 1, 1, 1 ],
+                "shadow": true,
+                "font_type": "smooth",
+                "anchor_from": "bottom_right",
+                "anchor_to": "bottom_right",
                 "bindings": [ { "binding_name": "#gamertag_label" } ]
               }
             },

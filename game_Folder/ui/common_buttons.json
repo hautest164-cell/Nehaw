@@ -2,8 +2,8 @@
   "namespace": "common_buttons",
 
   // 1. STYLE DEFINITION
-  "$blue_black_bg": [ 0.0, 0.05, 0.15, 0.55 ],
-  "$client_border_color": [ 0.4, 0.6, 1.0, 0.8 ],
+  "$blue_black_bg": [ 0.0, 0.05, 0.15, 0.3 ],
+  "$client_border_color": [ 0.4, 0.6, 1.0, 1.0 ],
 
   // 2. THE BUTTON BOX (Transparent + Border)
   "client_button_panel": {
@@ -14,7 +14,7 @@
         "border": {
           "type": "image",
           "texture": "textures/ui/focus_border_white",
-          "color": "$client_border_color",
+          "color": [ 0.4, 0.6, 1.0, 0.7 ],
           "size": [ "100%", "100%" ],
           "layer": 3
         }
