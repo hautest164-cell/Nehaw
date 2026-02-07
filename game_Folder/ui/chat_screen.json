@@ -93,20 +93,40 @@
                       "size": [ "100%-58px", 50 ],
                       "controls": [
                         {
+                          "input_bg": {
+                            "type": "image",
+                            "texture": "textures/ui/white",
+                            "color": [ 0.0, 0.15, 0.2, 0.6 ],
+                            "size": [ "100%", "100%" ],
+                            "layer": 1
+                          }
+                        },
+                        {
+                          "input_border": {
+                            "type": "image",
+                            "texture": "textures/ui/focus_border_white",
+                            "color": [ 0.2, 0.8, 1.0, 0.8 ],
+                            "size": [ "100%", "100%" ],
+                            "layer": 2
+                          }
+                        },
+                        {
                           "input_field": {
                             "type": "input_panel",
-                            "size": [ "100%", "100%" ],
+                            "size": [ "100%-4px", "100%-4px" ],
+                            "offset": [ 2, 2 ],
                             "text_type": "chat",
                             "text_control": {
                               "type": "label",
                               "font_type": "smooth",
                               "text_alignment": "left",
                               "size": [ "100%", "100%" ],
-                              "color": [ 1, 1, 1, 1 ],
-                              "shadow": true
+                              "color": [ 0.0, 1.0, 1.0, 1.0 ],
+                              "shadow": true,
+                              "layer": 3
                             },
                             "placeholder": "Type message or command...",
-                            "placeholder_color": [ 0.7, 0.7, 0.7, 0.7 ],
+                            "placeholder_color": [ 0.0, 0.8, 0.9, 0.8 ],
                             "editable": true,
                             "bindings": [
                               {
