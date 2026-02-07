@@ -4,8 +4,14 @@
   "bg_no_safezone_screen_panel": {
     "type": "panel",
     "controls": [
-      { "bg@create_world.create_world_transparent_overlay": {} }
+      { "bg@create_world.empty_img": {} }
     ]
+  },
+
+  "empty_img": {
+    "type": "image",
+    "texture": "textures/ui/empty",
+    "size": [ "100%", "100%" ]
   },
 
   "create_world_transparent_overlay": {
@@ -16,7 +22,7 @@
         "tint": {
           "type": "image",
           "texture": "textures/ui/white",
-          "color": [ 0, 0, 0, 0.3 ],
+          "color": [ 0, 0, 0, 0.15 ],
           "size": [ "100%", "100%" ]
         }
       }
@@ -31,7 +37,7 @@
   },
 
   "create_world_screen@common.base_screen": {
-    "$screen_bg_content": "create_world.create_world_transparent_overlay",
+    "$screen_bg_content": "create_world.empty_img",
     "$screen_content": "create_world.create_world_common.create_world_panel"
   }
 }
