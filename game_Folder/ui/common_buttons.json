@@ -25,7 +25,7 @@
       {
         "pressed_state": {
           "type": "image",
-          "texture": "textures/gui/client/btn_pressed",
+          "texture": "textures/gui/client/btn_hover",
           "nineslice_size": 4.0,
           "size": [ "100%", "100%" ],
           "$visible": "$button_state == 'pressed'"

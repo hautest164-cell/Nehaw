@@ -1,23 +1,14 @@
 ﻿{
   "namespace": "start",
 
-  "start_empty_overlay": {
-    "type": "panel",
-    "size": [ "100%", "100%" ],
-    "controls": [
-      {
-        "bg": {
-          "type": "image",
-          "texture": "textures/ui/empty",
-          "size": [ "100%", "100%" ],
-          "layer": 0
-        }
-      }
-    ]
+  "empty_img": {
+    "type": "image",
+    "texture": "textures/ui/empty",
+    "size": [ "100%", "100%" ]
   },
 
   "start_screen@common.base_screen": {
-    "$screen_bg_content": "start.start_empty_overlay",
+    "$screen_bg_content": "@start.empty_img",
     "$screen_content": "start.start_screen_content"
   },
 
