@@ -21,7 +21,7 @@
         "black_tint": {
           "type": "image",
           "texture": "textures/ui/white",
-          "color": [ 0, 0, 0, 0.4 ],
+          "color": [ 0, 0, 0, 0.15 ],
           "size": [ "100%", "100%" ]
         }
       }
@@ -47,7 +47,8 @@
                   {
                     "resume@common_buttons.light_text_button": {
                       "$button_text": "menu.resume",
-                      "$pressed_button_name": "button.menu_continue"
+                      "$pressed_button_name": "button.menu_continue",
+                      "$button_icon": "textures/gui/client/icon_play"
                     }
                   }
                 ]
@@ -78,7 +79,8 @@
                   {
                     "quit@common_buttons.light_text_button": {
                       "$button_text": "menu.quit",
-                      "$pressed_button_name": "button.menu_quit"
+                      "$pressed_button_name": "button.menu_quit",
+                      "$button_icon": "textures/gui/client/icon_store"
                     }
                   }
                 ]
