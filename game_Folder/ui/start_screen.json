@@ -1,0 +1,80 @@
+﻿{
+  "namespace": "start",
+
+  "start_screen@common.base_screen": {
+    "$screen_bg_content": "RPC_BGDATA.UI2",
+    "$screen_content": "start.start_screen_content"
+  },
+
+  "start_screen_content": {
+    "type": "panel",
+    "controls": [
+      // CENTER BUTTONS
+      { "center_stack@start.main_buttons_stack_panel": {} },
+
+      // RIGHT SIDE: NAME & DRESSING ROOM
+      {
+        "right_panel": {
+          "type": "stack_panel",
+          "anchor_from": "bottom_right",
+          "anchor_to": "bottom_right",
+          "offset": [ -10, -10 ],
+          "size": [ 130, "100%c" ],
+          "controls": [
+            {
+              "name_tag": {
+                "type": "panel",
+                "size": [ "100%", 22 ],
+                "controls": [
+                  { "bg@common_buttons.client_button_panel": { "$button_text": "#gamertag_label" } }
+                ],
+                "bindings": [ { "binding_name": "#gamertag_label" } ]
+              }
+            },
+            { "p": { "type": "panel", "size": [ 0, 4 ] } },
+            {
+              "dr_box": {
+                "type": "panel",
+                "size": [ "100%", 32 ],
+                "controls": [
+                  { "dr@common_buttons.light_text_button": { "$button_text": "Dressing Room", "$pressed_button_name": "button.menu_skins" } }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      { "text_panel@start.text_panel": {} }
+    ]
+  },
+
+  "main_buttons_stack_panel": {
+    "type": "stack_panel",
+    "size": [ 200, "100%" ],
+    "controls": [
+      { "fill": { "type": "panel", "size": [ "100%", "fill" ] } },
+      { "r1@start.btn_row": { "$button_text": "menu.play", "$pressed_button_name": "button.menu_play" } },
+      { "r2@start.btn_row": { "$button_text": "menu.settings", "$pressed_button_name": "button.menu_settings" } },
+      { "r3@start.btn_row": { "$button_text": "Realms", "$pressed_button_name": "button.menu_realms" } },
+      { "r4@start.btn_row": { "$button_text": "Marketplace", "$pressed_button_name": "button.menu_store" } },
+      { "fill2": { "type": "panel", "size": [ "100%", "fill" ] } }
+    ]
+  },
+
+  "btn_row": {
+    "type": "panel",
+    "size": [ "100%", 36 ],
+    "controls": [ { "b@common_buttons.light_text_button": {} } ]
+  },
+
+  "text_panel": {
+    "type": "panel",
+    "size": [ "100%-10px", 10 ],
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "controls": [
+      { "v": { "type": "label", "text": "#version", "anchor_from": "bottom_right", "anchor_to": "bottom_right", "bindings": [ { "binding_name": "#version" } ] } },
+      { "c": { "type": "label", "text": "©Mojang AB", "anchor_from": "bottom_left", "anchor_to": "bottom_left" } }
+    ]
+  }
+}

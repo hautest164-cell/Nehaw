@@ -1,0 +1,53 @@
+{
+  "namespace": "common_buttons",
+
+  // 1. STYLE DEFINITION
+  "$blue_black_bg": [ 0.0, 0.05, 0.15, 0.55 ],
+  "$client_border_color": [ 0.4, 0.6, 1.0, 0.8 ],
+
+  // 2. THE BUTTON BOX (Transparent + Border)
+  "client_button_panel": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {
+        "border": {
+          "type": "image",
+          "texture": "textures/ui/focus_border_white",
+          "color": "$client_border_color",
+          "size": [ "100%", "100%" ],
+          "layer": 3
+        }
+      },
+      {
+        "background": {
+          "type": "image",
+          "texture": "textures/ui/white",
+          "color": "$blue_black_bg",
+          "size": [ "100% - 2px", "100% - 2px" ],
+          "layer": 1
+        }
+      },
+      {
+        "text_label": {
+          "type": "label",
+          "layer": 4,
+          "text": "$button_text",
+          "font_type": "smooth",
+          "shadow": true,
+          "color": [ 1, 1, 1 ]
+        }
+      }
+    ]
+  },
+
+  // 3. THE ACTUAL BUTTON (Used by all screens)
+  "light_text_button@common.button": {
+    "size": [ "100%", "100%" ],
+    "controls": [
+      { "default@common_buttons.client_button_panel": {} },
+      { "hover@common_buttons.client_button_panel": { "$blue_black_bg": [ 0.1, 0.2, 0.4, 0.75 ] } },
+      { "pressed@common_buttons.client_button_panel": { "$blue_black_bg": [ 0, 0, 0, 0.85 ] } }
+    ]
+  }
+}

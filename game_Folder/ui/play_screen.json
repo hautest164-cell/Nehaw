@@ -1,0 +1,16 @@
+{
+  "namespace": "play",
+
+  "play_screen@common.base_screen": {
+    // This line replaces the panorama with your custom background
+    "$screen_bg_content": "RPC_BGDATA.UI2", 
+    "$screen_content": "play.play_screen_content"
+  },
+
+  "play_screen_content": {
+    "type": "panel",
+    "controls": [
+      { "main_control@play_common.play_screen_panel": {} }
+    ]
+  }
+}

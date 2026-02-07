@@ -1,0 +1,9 @@
+{
+  "namespace": "settings",
+
+  "settings_screen@common.base_screen": {
+    // Replaces the default settings background with your moon image
+    "$screen_bg_content": "RPC_BGDATA.UI2",
+    "$screen_content": "settings_common.settings_screen_content"
+  }
+}

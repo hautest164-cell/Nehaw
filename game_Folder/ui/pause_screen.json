@@ -1,0 +1,104 @@
+{
+  "namespace": "pause",
+
+  "pause_background_overlay": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {
+        "main_tint": {
+          "type": "image",
+          "texture": "textures/ui/white",
+          "color": [ 0.0, 0.05, 0.1, 0.45 ], 
+          "size": [ "100%", "100%" ],
+          "layer": 1
+        }
+      }
+    ]
+  },
+
+  "pause_screen@common.base_screen": {
+    "$screen_bg_content": "pause.pause_background_overlay", 
+    "$screen_content": "pause.pause_screen_content"
+  },
+
+  "pause_screen_content": {
+    "type": "panel",
+    "controls": [
+      {
+        "bordered_panel": {
+          "type": "panel",
+          "size": [ 210, "100%c + 20px" ],
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "controls": [
+            {
+              "border": {
+                "type": "image",
+                "texture": "textures/ui/focus_border_white",
+                "color": [ 0.4, 0.6, 1.0, 0.8 ], 
+                "size": [ "100%", "100%" ],
+                "layer": 2
+              }
+            },
+            {
+              "inner_bg": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "color": [ 0, 0, 0, 0.6 ],
+                "size": [ "100% - 2px", "100% - 2px" ],
+                "layer": 1
+              }
+            },
+            {
+              "button_stack": {
+                "type": "stack_panel",
+                "size": [ 200, "100%c" ],
+                "controls": [
+                  { "resume@pause.btn_row": { "$btn_txt": "menu.resume", "$btn_event": "button.menu_continue" } },
+                  { "settings@pause.btn_row": { "$btn_txt": "menu.settings", "$btn_event": "button.menu_settings" } },
+                  { "quit@pause.btn_row": { "$btn_txt": "menu.quit", "$btn_event": "button.menu_quit" } }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "btn_row": {
+    "type": "panel",
+    "size": [ "100%", 36 ],
+    "controls": [
+      {
+        "btn@common.button": {
+          "size": [ "100%", "100%" ],
+          "$pressed_button_name": "$btn_event",
+          "controls": [
+            { "default@pause.btn_state": { "color": [ 0.0, 0.05, 0.15, 0.55 ] } },
+            { "hover@pause.btn_state": { "color": [ 0.1, 0.2, 0.4, 0.75 ] } },
+            { "pressed@pause.btn_state": { "color": [ 0, 0, 0, 0.85 ] } }
+          ]
+        }
+      }
+    ]
+  },
+
+  "btn_state": {
+    "type": "image",
+    "texture": "textures/ui/white",
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {
+        "label": {
+          "type": "label",
+          "text": "$btn_txt",
+          "color": [ 1, 1, 1 ],
+          "shadow": true,
+          "layer": 5
+        }
+      }
+    ]
+  }
+}
