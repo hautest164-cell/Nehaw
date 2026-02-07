@@ -1,4 +1,4 @@
-menu.resume=Return to Battle
-menu.settings=Wolf Settings
-menu.quit=Exit Wolf Client
-menu.store=Wolf Shop
+menu.resume=Resume
+menu.settings=Settings
+menu.quit=Exit
+menu.store=Shop

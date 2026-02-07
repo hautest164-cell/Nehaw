@@ -16,6 +16,7 @@
     }
   ],
   "metadata": {
-    "authors": ["TLWTryoo"]
+    "authors": ["TLWTryoo"],
+    "default_locale": "en_US"
   }
 }
