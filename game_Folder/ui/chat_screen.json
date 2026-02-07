@@ -1,19 +1,12 @@
 {
   "namespace": "chat",
 
-  "bg_no_safezone_screen_panel": {
-    "type": "panel",
-    "controls": [
-      { "bg@chat.chat_background": {} }
-    ]
-  },
-
   "chat_screen@common.base_screen": {
-    "$screen_bg_content": "chat.chat_background",
+    "$screen_bg_content": "chat.chat_transparent_overlay",
     "$screen_content": "chat.chat_screen_content"
   },
 
-  "chat_background": {
+  "chat_transparent_overlay": {
     "type": "panel",
     "size": [ "100%", "100%" ],
     "controls": [
@@ -21,48 +14,8 @@
         "tint": {
           "type": "image",
           "texture": "textures/ui/white",
-          "color": [ 0, 0, 0, 0.4 ],
+          "color": [ 0, 0, 0, 0.15 ],
           "size": [ "100%", "100%" ]
-        }
-      }
-    ]
-  },
-
-  "chat_root": {
-    "type": "panel",
-    "size": [ "100%", "100%" ],
-    "layer": 10,
-    "controls": [
-      {
-        "light_tint": {
-          "type": "image",
-          "texture": "textures/ui/white",
-          "color": [ 0, 0, 0, 0.2 ],
-          "size": [ "100%", "100%" ]
-        }
-      },
-      {
-        "chat_container": {
-          "type": "panel",
-          "size": [ "100%", "100%" ],
-          "controls": [
-            {
-              "border_frame": {
-                "type": "image",
-                "texture": "textures/ui/focus_border_white",
-                "color": [ 0.4, 0.6, 1.0, 0.3 ],
-                "size": [ "100%", "100%" ]
-              }
-            },
-            {
-              "bg_panel": {
-                "type": "image",
-                "texture": "textures/ui/white",
-                "color": [ 0, 0, 0, 0.4 ],
-                "size": [ "100%", "100%" ]
-              }
-            }
-          ]
         }
       }
     ]
@@ -70,8 +23,131 @@
 
   "chat_screen_content": {
     "type": "panel",
+    "size": [ "100%", "100%" ],
     "controls": [
-      { "chat_layer@chat.chat_root": {} }
+      {
+        "main_panel": {
+          "type": "stack_panel",
+          "size": [ "100%", "100%" ],
+          "orientation": "vertical",
+          "controls": [
+            {
+              "spacer_top": {
+                "type": "panel",
+                "size": [ "100%", "fill" ]
+              }
+            },
+            {
+              "chat_box": {
+                "type": "panel",
+                "size": [ "80%c", 280 ],
+                "anchor_from": "center",
+                "anchor_to": "center",
+                "controls": [
+                  {
+                    "chat_bg": {
+                      "type": "image",
+                      "texture": "textures/ui/white",
+                      "color": [ 0.0, 0.05, 0.1, 0.2 ],
+                      "size": [ "100%", "100%" ],
+                      "layer": 1
+                    }
+                  },
+                  {
+                    "chat_border": {
+                      "type": "image",
+                      "texture": "textures/ui/focus_border_white",
+                      "color": [ 0.4, 0.6, 1.0, 0.3 ],
+                      "size": [ "100%", "100%" ],
+                      "layer": 2
+                    }
+                  },
+                  {
+                    "message_scroll": {
+                      "type": "scrolling_panel",
+                      "size": [ "100%-6px", "100%-56px" ],
+                      "offset": [ 3, 3 ],
+                      "layer": 3,
+                      "controls": [
+                        {
+                          "message_list": {
+                            "type": "stack_panel",
+                            "orientation": "vertical",
+                            "size": [ "100%", "100%c" ],
+                            "bindings": [
+                              {
+                                "binding_name": "#chat_messages"
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "input_section": {
+                      "type": "panel",
+                      "anchor_from": "bottom_left",
+                      "anchor_to": "bottom_left",
+                      "offset": [ 3, -3 ],
+                      "size": [ "100%-58px", 50 ],
+                      "controls": [
+                        {
+                          "input_field": {
+                            "type": "input_panel",
+                            "size": [ "100%", "100%" ],
+                            "text_type": "chat",
+                            "text_control": {
+                              "type": "label",
+                              "font_type": "smooth",
+                              "text_alignment": "left",
+                              "size": [ "100%", "100%" ],
+                              "color": [ 1, 1, 1, 1 ],
+                              "shadow": true
+                            },
+                            "placeholder": "Type message or command...",
+                            "placeholder_color": [ 0.7, 0.7, 0.7, 0.7 ],
+                            "editable": true,
+                            "bindings": [
+                              {
+                                "binding_name": "#chat_input"
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "send_button_section": {
+                      "type": "panel",
+                      "anchor_from": "bottom_right",
+                      "anchor_to": "bottom_right",
+                      "offset": [ -3, -3 ],
+                      "size": [ 52, 50 ],
+                      "controls": [
+                        {
+                          "send_btn@common_buttons.light_text_button": {
+                            "$button_text": "Send",
+                            "$pressed_button_name": "button.chat_send",
+                            "$button_icon": "textures/gui/client/icon_play"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "spacer_bottom": {
+                "type": "panel",
+                "size": [ "100%", "fill" ]
+              }
+            }
+          ]
+        }
+      }
     ]
   }
 }
