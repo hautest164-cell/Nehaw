@@ -1,23 +1,14 @@
 {
   "namespace": "play",
 
-  "play_transparent_overlay": {
-    "type": "panel",
-    "size": [ "100%", "100%" ],
-    "controls": [
-      {
-        "tint": {
-          "type": "image",
-          "texture": "textures/ui/empty",
-          "size": [ "100%", "100%" ],
-          "layer": 1
-        }
-      }
-    ]
+  "empty_img": {
+    "type": "image",
+    "texture": "textures/ui/empty",
+    "size": [ "100%", "100%" ]
   },
 
   "play_screen@common.base_screen": {
-    "$screen_bg_content": "play.play_transparent_overlay", 
+    "$screen_bg_content": "@play.empty_img",
     "$screen_content": "play.play_screen_content"
   },
 

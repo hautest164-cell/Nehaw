@@ -1,19 +1,15 @@
 {
   "namespace": "settings",
 
-  "settings_empty_overlay": {
-    "type": "panel",
-    "size": [ "100%", "100%" ],
-    "controls": [
-      {
-        "bg": {
-          "type": "image",
-          "texture": "textures/ui/empty",
-          "size": [ "100%", "100%" ],
-          "layer": 0
-        }
-      }
-    ]
+  "empty_img": {
+    "type": "image",
+    "texture": "textures/ui/empty",
+    "size": [ "100%", "100%" ]
+  },
+
+  "settings_screen@common.base_screen": {
+    "$screen_bg_content": "@settings.empty_img",
+    "$screen_content": "settings.settings_common.settings_screen_content"
   },
 
   "settings_common": {
@@ -21,10 +17,5 @@
       "type": "panel",
       "size": [ "100%", "100%" ]
     }
-  },
-
-  "settings_screen@common.base_screen": {
-    "$screen_bg_content": "settings.settings_empty_overlay",
-    "$screen_content": "settings.settings_common.settings_screen_content"
   }
 }

@@ -21,12 +21,12 @@
     "size": [ "100%", "100%" ]
   },
 
-  "chat_panel_wrapper": {
+  "chat_root": {
     "type": "panel",
     "size": [ "100%", "100%" ],
     "layer": 5,
     "controls": [
-      { "chat_inner@chat.chat_panel": {} }
+      { "chat_panel@chat.chat_panel": {} }
     ]
   },
 
@@ -45,7 +45,7 @@
           "controls": [
             { "border": { "type": "image", "texture": "textures/ui/focus_border_white", "color": [ 0.4, 0.6, 1.0, 0.3 ], "size": [ "100%", "100%" ] } },
             { "bg": { "type": "image", "texture": "textures/ui/white", "color": [ 0, 0, 0, 0.4 ], "size": [ "100%", "100%" ] } },
-            { "chat_panel_layer@chat.chat_panel_wrapper": {} }
+            { "chat_panel_layer@chat.chat_root": {} }
           ]
         }
       }
