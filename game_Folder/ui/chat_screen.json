@@ -1,6 +1,13 @@
 {
   "namespace": "chat",
 
+  "bg_no_safezone_screen_panel": {
+    "type": "image",
+    "texture": "textures/ui/white",
+    "color": [ 0, 0, 0, 0 ],
+    "size": [ "100%", "100%" ]
+  },
+
   "chat_screen@common.base_screen": {
     "$screen_bg_content": "chat.chat_background",
     "$screen_content": "chat.chat_screen_content"

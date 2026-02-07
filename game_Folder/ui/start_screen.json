@@ -2,8 +2,10 @@
   "namespace": "start",
 
   "bg_no_safezone_screen_panel": {
-    "type": "panel",
-    "controls": []
+    "type": "image",
+    "texture": "textures/ui/white",
+    "color": [ 0, 0, 0, 0 ],
+    "size": [ "100%", "100%" ]
   },
 
   "empty_img": {
