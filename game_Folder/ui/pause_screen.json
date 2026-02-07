@@ -9,7 +9,7 @@
         "main_tint": {
           "type": "image",
           "texture": "textures/ui/white",
-          "color": [ 0.0, 0.05, 0.1, 0.45 ], 
+          "color": [ 0, 0, 0, 0.3 ], 
           "size": [ "100%", "100%" ],
           "layer": 1
         }
@@ -36,8 +36,9 @@
               "border": {
                 "type": "image",
                 "texture": "textures/ui/focus_border_white",
-                "color": [ 0.4, 0.6, 1.0, 0.8 ], 
+                "color": [ 0.4, 0.6, 1.0, 0.7 ], 
                 "size": [ "100%", "100%" ],
+                "offset": [ 0, 0 ],
                 "layer": 2
               }
             },
@@ -45,8 +46,9 @@
               "inner_bg": {
                 "type": "image",
                 "texture": "textures/ui/white",
-                "color": [ 0, 0, 0, 0.6 ],
-                "size": [ "100% - 2px", "100% - 2px" ],
+                "color": [ 0, 0, 0, 0.4 ],
+                "size": [ "100%", "100%" ],
+                "offset": [ 1, 1 ],
                 "layer": 1
               }
             },

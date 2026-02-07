@@ -16,6 +16,7 @@
           "texture": "textures/ui/focus_border_white",
           "color": [ 0.4, 0.6, 1.0, 0.7 ],
           "size": [ "100%", "100%" ],
+          "offset": [ 0, 0 ],
           "layer": 3
         }
       },
@@ -24,7 +25,8 @@
           "type": "image",
           "texture": "textures/ui/white",
           "color": "$blue_black_bg",
-          "size": [ "100% - 2px", "100% - 2px" ],
+          "size": [ "100%", "100%" ],
+          "offset": [ 1, 1 ],
           "layer": 1
         }
       },
@@ -35,7 +37,9 @@
           "text": "$button_text",
           "font_type": "smooth",
           "shadow": true,
-          "color": [ 1, 1, 1 ]
+          "color": [ 1, 1, 1 ],
+          "anchor_from": "center",
+          "anchor_to": "center"
         }
       }
     ]
