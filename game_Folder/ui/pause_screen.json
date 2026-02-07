@@ -23,19 +23,59 @@
 
   "pause_screen_content": {
     "type": "panel",
+    "size": [ "100%", "100%" ],
     "controls": [
       {
-        "button_stack": {
+        "button_container": {
           "type": "stack_panel",
           "anchor_from": "center",
           "anchor_to": "center",
           "size": [ 200, "100%c" ],
           "controls": [
-            { "resume@common_buttons.light_text_button": { "$button_text": "menu.resume", "$pressed_button_name": "button.menu_continue" } },
+            {
+              "resume_button": {
+                "type": "panel",
+                "size": [ 200, 36 ],
+                "controls": [
+                  {
+                    "resume@common_buttons.light_text_button": {
+                      "$button_text": "menu.resume",
+                      "$pressed_button_name": "button.menu_continue"
+                    }
+                  }
+                ]
+              }
+            },
             { "spacer1": { "type": "panel", "size": [ 0, 4 ] } },
-            { "settings@common_buttons.light_text_button": { "$button_text": "menu.settings", "$pressed_button_name": "button.menu_settings" } },
+            {
+              "settings_button": {
+                "type": "panel",
+                "size": [ 200, 36 ],
+                "controls": [
+                  {
+                    "settings@common_buttons.light_text_button": {
+                      "$button_text": "menu.settings",
+                      "$pressed_button_name": "button.menu_settings"
+                    }
+                  }
+                ]
+              }
+            },
             { "spacer2": { "type": "panel", "size": [ 0, 4 ] } },
-            { "quit@common_buttons.light_text_button": { "$button_text": "menu.quit", "$pressed_button_name": "button.menu_quit" } }
+            {
+              "quit_button": {
+                "type": "panel",
+                "size": [ 200, 36 ],
+                "controls": [
+                  {
+                    "quit@common_buttons.light_text_button": {
+                      "$button_text": "menu.quit",
+                      "$pressed_button_name": "button.menu_quit"
+                    }
+                  }
+                ]
+              }
+            }
           ]
         }
       }

@@ -49,6 +49,7 @@
           "color": [ 1, 1, 1, 1 ],
           "anchor_from": "center",
           "anchor_to": "center",
+          "offset": [ 0, 0 ],
           "layer": 2,
           "padding": [ 2, 2 ]
         }
