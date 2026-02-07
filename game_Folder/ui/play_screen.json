@@ -8,8 +8,7 @@
       {
         "tint": {
           "type": "image",
-          "texture": "textures/ui/white",
-          "color": [ 0, 0, 0, 0.3 ],
+          "texture": "textures/ui/empty",
           "size": [ "100%", "100%" ],
           "layer": 1
         }

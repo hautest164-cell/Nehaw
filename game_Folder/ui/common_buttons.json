@@ -8,17 +8,30 @@
       {
         "default_state": {
           "type": "image",
-          "texture": "textures/ui/white",
-          "color": [ 0.0, 0.05, 0.15, 0.3 ],
+          "texture": "textures/gui/client/btn_default",
+          "renderer": "gradient_mask",
+          "nineslice_size": 4.0,
           "size": [ "100%", "100%" ]
+        }
+      },
+      {
+        "hover_state": {
+          "type": "image",
+          "texture": "textures/gui/client/btn_hover",
+          "renderer": "gradient_mask",
+          "nineslice_size": 4.0,
+          "size": [ "100%", "100%" ],
+          "$visible": "$button_state == 'hover'"
         }
       },
       {
         "border": {
           "type": "image",
-          "texture": "textures/ui/focus_border_white",
-          "color": [ 0.4, 0.6, 1.0, 0.7 ],
-          "size": [ "100%", "100%" ]
+          "texture": "textures/gui/client/btn_border",
+          "renderer": "gradient_mask",
+          "nineslice_size": 4.0,
+          "size": [ "100%", "100%" ],
+          "layer": 1
         }
       },
       {
@@ -39,8 +52,9 @@
   // 2. LEGACY COMPATIBILITY - Maps to simple_button
   "client_button_panel": {
     "type": "image",
-    "texture": "textures/ui/white",
-    "color": [ 0.0, 0.05, 0.15, 0.3 ],
+    "texture": "textures/gui/client/btn_default",
+    "renderer": "gradient_mask",
+    "nineslice_size": 4.0,
     "size": [ "100%", "100%" ]
   },
 
