@@ -1,11 +1,66 @@
 {
   "namespace": "container",
 
-  "bg_no_safezone_screen_panel": {
+  "container_slot": {
     "type": "panel",
+    "size": [ 18, 18 ],
     "controls": [
-      { "bg@container.client_container_bg": {} }
+      {
+        "slot_bg": {
+          "type": "image",
+          "texture": "textures/ui/white",
+          "color": [ 0.1, 0.1, 0.1, 0.5 ],
+          "size": [ "100%", "100%" ]
+        }
+      },
+      {
+        "slot_border": {
+          "type": "image",
+          "texture": "textures/ui/focus_border_white",
+          "color": [ 0.4, 0.6, 1.0, 0.4 ],
+          "size": [ "100%", "100%" ]
+        }
+      }
     ]
+  },
+
+  "inventory_slot": {
+    "type": "panel",
+    "size": [ 18, 18 ],
+    "controls": [
+      {
+        "slot_bg": {
+          "type": "image",
+          "texture": "textures/ui/white",
+          "color": [ 0.1, 0.1, 0.1, 0.4 ],
+          "size": [ "100%", "100%" ]
+        }
+      },
+      {
+        "slot_border": {
+          "type": "image",
+          "texture": "textures/ui/focus_border_white",
+          "color": [ 0.4, 0.6, 1.0, 0.3 ],
+          "size": [ "100%", "100%" ]
+        }
+      }
+    ]
+  },
+
+  "container_grid": {
+    "type": "grid",
+    "grid_dimension_type": "fixed",
+    "grid_dimension": [ 9, 3 ],
+    "grid_item_template": "container.container_slot",
+    "size": [ "165", "55" ]
+  },
+
+  "inventory_grid": {
+    "type": "grid",
+    "grid_dimension_type": "fixed",
+    "grid_dimension": [ 9, 4 ],
+    "grid_item_template": "container.inventory_slot",
+    "size": [ "165", "75" ]
   },
 
   "inventory_panel": {
@@ -13,21 +68,56 @@
     "size": [ "100%", "100%" ],
     "controls": [
       {
-        "bg@container.client_container_bg": {}
-      }
-    ]
-  },
-
-  "quick_loot_button": {
-    "type": "panel",
-    "size": [ "100%c", 36 ],
-    "offset": [ 0, 10 ],
-    "controls": [
-      {
-        "quick_loot@common_buttons.light_text_button": {
-          "$button_text": "Quick Loot",
-          "$pressed_button_name": "button.quick_loot",
-          "$button_icon": "textures/gui/client/icon_play"
+        "container_panel": {
+          "type": "panel",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "size": [ 200, "100%c" ],
+          "controls": [
+            {
+              "container_bg": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "color": [ 0.0, 0.05, 0.1, 0.2 ],
+                "size": [ "100%", "100%" ],
+                "layer": 1
+              }
+            },
+            {
+              "container_border": {
+                "type": "image",
+                "texture": "textures/ui/focus_border_white",
+                "color": [ 0.4, 0.6, 1.0, 0.3 ],
+                "size": [ "100%", "100%" ],
+                "layer": 2
+              }
+            },
+            {
+              "title_label": {
+                "type": "label",
+                "text": "Inventory",
+                "font_type": "smooth",
+                "shadow": true,
+                "color": [ 1, 1, 1, 1 ],
+                "anchor_from": "top_center",
+                "anchor_to": "top_center",
+                "offset": [ 0, 5 ],
+                "layer": 3
+              }
+            },
+            {
+              "inventory_list": {
+                "type": "stack_panel",
+                "orientation": "vertical",
+                "anchor_from": "center",
+                "anchor_to": "center",
+                "size": [ "100%", "fill" ],
+                "controls": [
+                  { "inv@container.inventory_grid": { "bindings": [ { "binding_name": "#inventory" } ] } }
+                ]
+              }
+            }
+          ]
         }
       }
     ]
@@ -38,17 +128,167 @@
     "size": [ "100%", "100%" ],
     "controls": [
       {
-        "bg@container.client_container_bg": {}
-      },
-      {
-        "quick_loot_section": {
+        "chest_container": {
           "type": "stack_panel",
-          "anchor_from": "bottom_center",
-          "anchor_to": "bottom_center",
-          "offset": [ 0, -10 ],
+          "orientation": "vertical",
+          "anchor_from": "center",
+          "anchor_to": "center",
           "size": [ 200, "100%c" ],
           "controls": [
-            { "ql@container.quick_loot_button": {} }
+            {
+              "container_box": {
+                "type": "panel",
+                "size": [ "100%", "100%c" ],
+                "controls": [
+                  {
+                    "chest_bg": {
+                      "type": "image",
+                      "texture": "textures/ui/white",
+                      "color": [ 0.0, 0.05, 0.1, 0.2 ],
+                      "size": [ "100%", "100%" ],
+                      "layer": 1
+                    }
+                  },
+                  {
+                    "chest_border": {
+                      "type": "image",
+                      "texture": "textures/ui/focus_border_white",
+                      "color": [ 0.4, 0.6, 1.0, 0.3 ],
+                      "size": [ "100%", "100%" ],
+                      "layer": 2
+                    }
+                  },
+                  {
+                    "container_content": {
+                      "type": "stack_panel",
+                      "orientation": "vertical",
+                      "size": [ "100%", "100%" ],
+                      "controls": [
+                        {
+                          "container_title": {
+                            "type": "label",
+                            "text": "#container_title",
+                            "font_type": "smooth",
+                            "shadow": true,
+                            "color": [ 1, 1, 1, 1 ],
+                            "size": [ "100%", 20 ],
+                            "offset": [ 0, 5 ],
+                            "layer": 3,
+                            "bindings": [ { "binding_name": "#container_title" } ]
+                          }
+                        },
+                        {
+                          "container_spacer": {
+                            "type": "panel",
+                            "size": [ "100%", 5 ]
+                          }
+                        },
+                        {
+                          "chest_grid": {
+                            "type": "stack_panel",
+                            "orientation": "vertical",
+                            "size": [ "100%", "100%c" ],
+                            "controls": [
+                              { "chest@container.container_grid": { "bindings": [ { "binding_name": "#container_items" } ] } }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "spacer_between": {
+                "type": "panel",
+                "size": [ "100%", 10 ]
+              }
+            },
+            {
+              "inventory_box": {
+                "type": "panel",
+                "size": [ "100%", "100%c" ],
+                "controls": [
+                  {
+                    "inv_bg": {
+                      "type": "image",
+                      "texture": "textures/ui/white",
+                      "color": [ 0.0, 0.05, 0.1, 0.2 ],
+                      "size": [ "100%", "100%" ],
+                      "layer": 1
+                    }
+                  },
+                  {
+                    "inv_border": {
+                      "type": "image",
+                      "texture": "textures/ui/focus_border_white",
+                      "color": [ 0.4, 0.6, 1.0, 0.3 ],
+                      "size": [ "100%", "100%" ],
+                      "layer": 2
+                    }
+                  },
+                  {
+                    "inventory_content": {
+                      "type": "stack_panel",
+                      "orientation": "vertical",
+                      "size": [ "100%", "100%" ],
+                      "controls": [
+                        {
+                          "inventory_title": {
+                            "type": "label",
+                            "text": "Inventory",
+                            "font_type": "smooth",
+                            "shadow": true,
+                            "color": [ 1, 1, 1, 1 ],
+                            "size": [ "100%", 20 ],
+                            "offset": [ 0, 5 ],
+                            "layer": 3
+                          }
+                        },
+                        {
+                          "inventory_spacer": {
+                            "type": "panel",
+                            "size": [ "100%", 5 ]
+                          }
+                        },
+                        {
+                          "inv_grid": {
+                            "type": "stack_panel",
+                            "orientation": "vertical",
+                            "size": [ "100%", "100%c" ],
+                            "controls": [
+                              { "inv@container.inventory_grid": { "bindings": [ { "binding_name": "#inventory" } ] } }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "quick_loot_spacer": {
+                "type": "panel",
+                "size": [ "100%", 8 ]
+              }
+            },
+            {
+              "quick_loot_button": {
+                "type": "panel",
+                "size": [ 200, 36 ],
+                "controls": [
+                  {
+                    "ql@common_buttons.light_text_button": {
+                      "$button_text": "Quick Loot",
+                      "$pressed_button_name": "button.quick_loot",
+                      "$button_icon": "textures/gui/client/icon_play"
+                    }
+                  }
+                ]
+              }
+            }
           ]
         }
       }
@@ -65,31 +305,6 @@
           "texture": "textures/ui/white",
           "color": [ 0, 0, 0, 0.15 ],
           "size": [ "100%", "100%" ]
-        }
-      }
-    ]
-  },
-
-  "client_container_bg": {
-    "type": "panel",
-    "size": [ "100%", "100%" ],
-    "controls": [
-      {
-        "border": {
-          "type": "image",
-          "texture": "textures/ui/focus_border_white",
-          "color": [ 0.4, 0.6, 1.0, 0.15 ],
-          "size": [ "100%", "100%" ],
-          "layer": 2
-        }
-      },
-      {
-        "main_bg": {
-          "type": "image",
-          "texture": "textures/ui/white",
-          "color": [ 0.0, 0.05, 0.1, 0.15 ], 
-          "size": [ "100%", "100%" ],
-          "layer": 1
         }
       }
     ]
