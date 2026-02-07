@@ -18,12 +18,39 @@
     ]
   },
 
+  "quick_loot_button": {
+    "type": "panel",
+    "size": [ "100%c", 36 ],
+    "offset": [ 0, 10 ],
+    "controls": [
+      {
+        "quick_loot@common_buttons.light_text_button": {
+          "$button_text": "Quick Loot",
+          "$pressed_button_name": "button.quick_loot",
+          "$button_icon": "textures/gui/client/icon_play"
+        }
+      }
+    ]
+  },
+
   "chest_panel": {
     "type": "panel",
     "size": [ "100%", "100%" ],
     "controls": [
       {
         "bg@container.client_container_bg": {}
+      },
+      {
+        "quick_loot_section": {
+          "type": "stack_panel",
+          "anchor_from": "bottom_center",
+          "anchor_to": "bottom_center",
+          "offset": [ 0, -10 ],
+          "size": [ 200, "100%c" ],
+          "controls": [
+            { "ql@container.quick_loot_button": {} }
+          ]
+        }
       }
     ]
   },
@@ -36,7 +63,7 @@
         "tint": {
           "type": "image",
           "texture": "textures/ui/white",
-          "color": [ 0, 0, 0, 0.3 ],
+          "color": [ 0, 0, 0, 0.15 ],
           "size": [ "100%", "100%" ]
         }
       }
@@ -51,7 +78,7 @@
         "border": {
           "type": "image",
           "texture": "textures/ui/focus_border_white",
-          "color": [ 0.4, 0.6, 1.0, 0.3 ],
+          "color": [ 0.4, 0.6, 1.0, 0.15 ],
           "size": [ "100%", "100%" ],
           "layer": 2
         }
@@ -60,7 +87,7 @@
         "main_bg": {
           "type": "image",
           "texture": "textures/ui/white",
-          "color": [ 0.0, 0.05, 0.1, 0.3 ], 
+          "color": [ 0.0, 0.05, 0.1, 0.15 ], 
           "size": [ "100%", "100%" ],
           "layer": 1
         }
