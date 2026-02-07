@@ -40,8 +40,8 @@
                 "color": [ 1, 1, 1, 1 ],
                 "shadow": true,
                 "font_type": "smooth",
-                "anchor_from": "bottom_right",
-                "anchor_to": "bottom_right",
+                "anchor_from": "center",
+                "anchor_to": "center",
                 "bindings": [ { "binding_name": "#gamertag_label" } ]
               }
             },
