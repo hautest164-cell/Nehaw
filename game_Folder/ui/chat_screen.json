@@ -24,7 +24,7 @@
   "chat_root": {
     "type": "panel",
     "size": [ "100%", "100%" ],
-    "layer": 5,
+    "layer": 10,
     "controls": [
       {
         "chat_container": {

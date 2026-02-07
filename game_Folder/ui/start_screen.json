@@ -1,6 +1,11 @@
 ﻿{
   "namespace": "start",
 
+  "bg_no_safezone_screen_panel": {
+    "type": "panel",
+    "controls": []
+  },
+
   "empty_img": {
     "type": "image",
     "texture": "textures/ui/empty",
