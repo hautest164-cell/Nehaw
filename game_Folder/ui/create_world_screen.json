@@ -1,6 +1,13 @@
 {
   "namespace": "create_world",
 
+  "bg_no_safezone_screen_panel": {
+    "type": "panel",
+    "controls": [
+      { "bg@create_world.create_world_transparent_overlay": {} }
+    ]
+  },
+
   "create_world_transparent_overlay": {
     "type": "panel",
     "size": [ "100%", "100%" ],

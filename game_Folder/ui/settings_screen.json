@@ -1,6 +1,13 @@
 {
   "namespace": "settings",
 
+  "bg_no_safezone_screen_panel": {
+    "type": "panel",
+    "controls": [
+      { "bg@settings.empty_img": {} }
+    ]
+  },
+
   "empty_img": {
     "type": "image",
     "texture": "textures/ui/empty",

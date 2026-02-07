@@ -1,6 +1,13 @@
 {
   "namespace": "pause",
 
+  "bg_no_safezone_screen_panel": {
+    "type": "panel",
+    "controls": [
+      { "bg@pause.pause_background": {} }
+    ]
+  },
+
   "pause_screen@common.base_screen": {
     "$screen_bg_content": "pause.pause_background",
     "$screen_content": "pause.pause_screen_content"

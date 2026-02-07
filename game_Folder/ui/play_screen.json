@@ -1,6 +1,13 @@
 {
   "namespace": "play",
 
+  "bg_no_safezone_screen_panel": {
+    "type": "panel",
+    "controls": [
+      { "bg@play.empty_img": {} }
+    ]
+  },
+
   "empty_img": {
     "type": "image",
     "texture": "textures/ui/empty",

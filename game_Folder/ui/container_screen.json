@@ -1,6 +1,13 @@
 {
   "namespace": "container",
 
+  "bg_no_safezone_screen_panel": {
+    "type": "panel",
+    "controls": [
+      { "bg@container.client_container_bg": {} }
+    ]
+  },
+
   "inventory_panel": {
     "type": "panel",
     "size": [ "100%", "100%" ],
