@@ -1,0 +1,62 @@
+{
+  "namespace": "chat",
+
+  "chat_screen@common.base_screen": {
+    "$screen_bg_content": "chat.chat_background",
+    "$screen_content": "chat.chat_screen_content"
+  },
+
+  "chat_background": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {
+        "tint": {
+          "type": "image",
+          "texture": "textures/ui/white",
+          "color": [ 0, 0, 0, 0.4 ],
+          "size": [ "100%", "100%" ]
+        }
+      }
+    ]
+  },
+
+  "chat_root": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "layer": 5,
+    "controls": [
+      {
+        "chat_container": {
+          "type": "panel",
+          "size": [ "100%", "100%" ],
+          "controls": [
+            {
+              "border_frame": {
+                "type": "image",
+                "texture": "textures/ui/focus_border_white",
+                "color": [ 0.4, 0.6, 1.0, 0.3 ],
+                "size": [ "100%", "100%" ]
+              }
+            },
+            {
+              "bg_panel": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "color": [ 0, 0, 0, 0.4 ],
+                "size": [ "100%", "100%" ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "chat_screen_content": {
+    "type": "panel",
+    "controls": [
+      { "chat_layer@chat.chat_root": {} }
+    ]
+  }
+}
