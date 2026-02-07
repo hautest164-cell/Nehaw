@@ -1,20 +1,9 @@
 {
   "namespace": "settings",
 
-  "settings_transparent_overlay": {
+  "settings_empty_overlay": {
     "type": "panel",
-    "size": [ "100%", "100%" ],
-    "controls": [
-      {
-        "tint": {
-          "type": "image",
-          "texture": "textures/ui/white",
-          "color": [ 0, 0, 0, 0.3 ],
-          "size": [ "100%", "100%" ],
-          "layer": 1
-        }
-      }
-    ]
+    "size": [ "100%", "100%" ]
   },
 
   "settings_common": {
@@ -25,7 +14,7 @@
   },
 
   "settings_screen@common.base_screen": {
-    "$screen_bg_content": "settings.settings_transparent_overlay",
+    "$screen_bg_content": "settings.settings_empty_overlay",
     "$screen_content": "settings.settings_common.settings_screen_content"
   }
 }
