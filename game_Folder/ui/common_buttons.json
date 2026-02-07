@@ -9,7 +9,6 @@
         "default_state": {
           "type": "image",
           "texture": "textures/gui/client/btn_default",
-          "renderer": "gradient_mask",
           "nineslice_size": 4.0,
           "size": [ "100%", "100%" ]
         }
@@ -18,7 +17,6 @@
         "hover_state": {
           "type": "image",
           "texture": "textures/gui/client/btn_hover",
-          "renderer": "gradient_mask",
           "nineslice_size": 4.0,
           "size": [ "100%", "100%" ],
           "$visible": "$button_state == 'hover'"
@@ -28,7 +26,6 @@
         "border": {
           "type": "image",
           "texture": "textures/gui/client/btn_border",
-          "renderer": "gradient_mask",
           "nineslice_size": 4.0,
           "size": [ "100%", "100%" ],
           "layer": 1
@@ -43,7 +40,7 @@
           "color": [ 1, 1, 1, 1 ],
           "anchor_from": "center",
           "anchor_to": "center",
-          "z_order": 2
+          "layer": 2
         }
       }
     ]
@@ -53,7 +50,6 @@
   "client_button_panel": {
     "type": "image",
     "texture": "textures/gui/client/btn_default",
-    "renderer": "gradient_mask",
     "nineslice_size": 4.0,
     "size": [ "100%", "100%" ]
   },
